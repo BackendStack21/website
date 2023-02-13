@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="21no.de provides open-source, JavaScript and Node.js-based technology for building faster and simpler core components for tomorrow's architectures. Empowering developers to innovate with faster JavaScript-based technologies.">
+    <title>21no.de</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 1000px) {
+            .projects {
+                flex-direction: column;
+            }
+
+            .highlights {
+                flex-direction: column;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            color: gray;
+            margin: 0;
+        }
+
+        .mission {
+            margin-bottom: 50px;
+            font-size: 15px;
+            line-height: 1.5;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .highlight {
+            border-radius: 20px;
+            width: calc(33.33% - 10px);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px 0 gray;
+            min-width: 280px;
+            margin-top: 20px;
+        }
+
+        .highlight h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .highlight p {
+            font-size: 15px;
+            color: gray;
+            margin: 10px;
+            line-height: 20px;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .project {
+            border-radius: 20px;
+            width: calc(33.33% - 10px);
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px 0 gray;
+            min-width: 280px;
+            margin-top: 20px;
+        }
+
+        .project h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .project p {
+            font-size: 15px;
+            color: gray;
+            margin: 10px;
+            line-height: 20px;
+        }
+
+        .project a {
+            display: block;
+            margin-top: 20px;
+            margin-right: 40px;
+            margin-left: 40px;
+            padding: 10px 40px;
+            background-color: #7faae9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            margin: 50px;
+            text-align: center;
+        }
+
+        .large-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #696f69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 0 10px 0 gray;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #333; color: #fff; text-align: center; padding: 20px;">
+        <img src="logo.png" alt="Logo" style="height: 50px; vertical-align: middle; padding-right: 20px;">
+        Build with faster and simpler JavaScript
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>JS-based components for the 21 century!</h1>
+        </div>
+        <h3>Empowering developers to innovate with faster JavaScript-based technologies</h3>
+        <p class="mission">Our mission is to empower developers to push the boundaries of innovation by providing and
+            promoting open-source, JavaScript and Node.js-based technology that simplifies the building of core
+            components for tomorrow's architectures. We strive to create faster and simpler solutions that enable
+            developers to build more performant and efficient applications.</p>
+        <div class="button-container">
+            <a class="large-button" href="https://github.com/BackendStack21">Find out more in GitHub</a>
+        </div>
+        <div class="highlights">
+            <div class="highlight">
+                <h3>Free and open-source</h3>
+                <p>We promote free and open-source software components, allowing developers to easily use, modify,
+                    and contribute to the project.</p>
+            </div>
+            <div class="highlight">
+                <h3>Performance and efficiency</h3>
+                <p>Our components are designed with performance and efficiency in mind, ensuring that your applications
+                    run smoothly and quickly.</p>
+            </div>
+            <div class="highlight">
+                <h3>Simpler and foundational building blocks</h3>
+                <p>We strive to provide foundational building blocks that are simpler and easier to use, allowing
+                    developers to focus on building their applications rather than reinventing the wheel.</p>
+            </div>
+        </div>
+        <h2>Trending projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>restana</h3>
+                <a href="https://github.com/BackendStack21/restana">View on GitHub</a>
+                <p>Restana is a lightweight and fast Node.js framework for building RESTful APIs. Inspired by Express,
+                    it provides a simple and intuitive API for routing, handling requests and responses, and middleware
+                    management. It is designed to be easy to use and integrate with other Node.js modules, allowing
+                    developers to quickly build scalable and maintainable APIs.</p>
+            </div>
+
+            <div class="project">
+                <h3>fast-gateway</h3>
+                <a href="https://github.com/BackendStack21/fast-gateway">View on GitHub</a>
+                <p>Fast-gateway is an easy to use Node.js API gateway framework built to handle large scale API traffic
+                    with great performance and scalability. Written with JavaScript, it is a framework for the masses!
+                </p>
+            </div>
+            <div class="project">
+                <h3>0http</h3>
+                <a href="https://github.com/BackendStack21/0http">View on GitHub</a>
+                <p>0http is a lightweight and extremely fast Node.js framework for building RESTful APIs. Highly
+                    optimized for throughput, barely extending core HTTP interfaces, the framework is a great candidate
+                    for solutions that require low latency and performance.</p>
+            </div>
+            <div class="project">
+                <h3>JWT Keys Generator</h3>
+                <a href="https://github.com/BackendStack21/jwt-keys-generator-api">View on GitHub</a>
+                <p>A simple and secure JSON Web Token (JWT) signing/verification keys generator that uses OpenSSL. The
+                    solution allows Web browser and API clients to easily generate JWT signing/verification keys
+                    supported by the “jsonwebtoken” library.</p>
+            </div>
+            <div class="project">
+                <h3>restana-static</h3>
+                <a href="https://github.com/BackendStack21/restana-static">View on GitHub</a>
+                <p>Efficiently serve static files using Node.js and Docker containers:
+                    https://itnext.io/restana-static-serving-the-frontend-with-node-js-beyond-nginx-e45fdb2e49cb</p>
+            </div>
+            <div class="project">
+                <h3>http-cache-middleware</h3>
+                <a href="https://github.com/BackendStack21/http-cache-middleware">View on GitHub</a>
+                <p>High performance connect-like HTTP cache middleware for Node.js. So your latency can decrease to
+                    single digit milliseconds 🚀</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
