@@ -12,9 +12,27 @@
             box-sizing: border-box;
         }
 
+        @media (min-width: 1000px) {
+            .project {
+                width: calc(30%);
+            }
+
+            .highlight {
+                width: calc(30%);
+            }
+        }
+
         @media (max-width: 1000px) {
             .projects {
                 flex-direction: column;
+            }
+
+            .project {
+                width: calc(100%);
+            }
+
+            .highlight {
+                width: calc(100%);
             }
 
             .highlights {
@@ -54,8 +72,9 @@
 
         .mission {
             font-style: italic;
+            color: gray;
             margin-bottom: 20px;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.5;
             padding-left: 50px;
             padding-right: 50px;
@@ -68,14 +87,14 @@
         }
 
         .highlight {
-            border-radius: 5px;
-            width: calc(33.33% - 10px);
+            border-radius: 10px;
             background-color: white;
             padding: 20px;
             text-align: center;
             box-shadow: 0 0 5px 0 gray;
-            min-width: 280px;
             margin-top: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
 
         .highlight h3 {
@@ -94,17 +113,18 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin-bottom: 50px;
         }
 
         .project {
-            border-radius: 5px;
-            width: calc(33.33% - 10px);
+            border-radius: 10px;
             background-color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 0 5px 0 gray;
-            min-width: 280px;
+            box-shadow: 0 0 3px 0 rgb(165, 165, 165);
             margin-top: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
 
         .project h3 {
@@ -125,7 +145,7 @@
             margin-top: 20px;
             margin-right: 40px;
             margin-left: 40px;
-            padding: 10px 40px;
+            padding: 10px 10px;
             background-color: #7faae9;
             color: white;
             text-decoration: none;
@@ -133,6 +153,7 @@
         }
 
         .button-container {
+            margin-top: 50px;
             margin-bottom: 10px;
             text-align: center;
         }
@@ -179,12 +200,7 @@
                 <img src="founder-avatar.jpeg" alt="User Avatar">
             </span>
         </p>
-        <div class="button-container">
-            <a class="large-button" href="https://github.com/BackendStack21">Find out more in GitHub</a>
-            </br>
-            </br>
-            <img alt="GitHub Org's stars" src="https://img.shields.io/github/stars/BackendStack21?style=social">
-        </div>
+
         <div class="highlights">
             <div class="highlight">
                 <h3>Free and open-source</h3>
@@ -231,12 +247,10 @@
                     for solutions that require low latency and performance.</p>
             </div>
             <div class="project">
-                <h3>JWT Keys Generator</h3>
-                <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kyberneees/jwt-keys-generator-api">
-                <a href="https://github.com/BackendStack21/jwt-keys-generator-api">View on GitHub</a>
-                <p>A simple and secure JSON Web Token (JWT) signing/verification keys generator that uses OpenSSL. The
-                    solution allows Web browser and API clients to easily generate JWT signing/verification keys
-                    supported by the “jsonwebtoken” library.</p>
+                <h3>keycloak-backend</h3>
+                <img alt="npm" src="https://img.shields.io/npm/dw/keycloak-backend">
+                <a href="https://github.com/BackendStack21/keycloak-backend">View on GitHub</a>
+                <p>A Node.js connector library for Keycloak. The module simplifies the integration of backend services, providing a foundation for high-performance authorization middlewares.</p>
             </div>
             <div class="project">
                 <h3>restana-static</h3>
@@ -252,6 +266,13 @@
                 <p>High performance connect-like HTTP cache middleware for Node.js. So your latency can decrease to
                     single digit milliseconds 🚀</p>
             </div>
+        </div>
+
+        <div class="button-container">
+            <a class="large-button" href="https://github.com/BackendStack21">Find out more in GitHub</a>
+            </br>
+            </br>
+            <img alt="GitHub Org's stars" src="https://img.shields.io/github/stars/BackendStack21?style=social">
         </div>
     </div>
 
