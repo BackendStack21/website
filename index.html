@@ -7,6 +7,8 @@
     <meta name="description"
         content="21no.de provides open-source, JavaScript and Node.js-based technology for building faster and simpler core components for tomorrow's architectures. Empowering developers to innovate with faster JavaScript-based technologies.">
     <title>21no.de</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo-v2.png">
     <style>
         * {
             box-sizing: border-box;
@@ -41,7 +43,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Poppins;
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
@@ -53,10 +55,6 @@
             padding: 50px;
             text-align: center;
             background-color: white;
-        }
-
-        .header {
-            margin-bottom: 50px;
         }
 
         .header h1 {
@@ -73,8 +71,8 @@
         .mission {
             font-style: italic;
             color: gray;
-            margin-bottom: 20px;
-            font-size: 15px;
+            margin-top: 50px;
+            font-size: 13px;
             line-height: 1.5;
             padding-left: 50px;
             padding-right: 50px;
@@ -95,6 +93,17 @@
             margin-top: 20px;
             margin-right: 10px;
             margin-left: 10px;
+        }
+
+        .logo {
+            border-radius: 10px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px 0 rgb(246, 241, 241);
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
         }
 
         .highlight h3 {
@@ -178,6 +187,7 @@
             height: 50px;
             margin: 0;
         }
+
         .project-avatar img {
             border-radius: 25%;
             width: 150px;
@@ -189,23 +199,15 @@
 
 <body>
     <header style="background-color: #333; color: #fff; text-align: center; padding: 20px;">
-        <img src="logo.png" alt="Logo" style="height: 50px; vertical-align: middle; padding-right: 20px;">
-        Build with faster and simpler JavaScript
+        21no.de - Build with faster and simpler JavaScript!
     </header>
     <div class="container">
-        <div class="header">
+        
+        <img src="logo-v2.png" alt="Logo" class="logo" height="300">
+        <div>
             <h1>JS-based components for the 21 century!</h1>
         </div>
         <h3>Empowering developers to innovate with faster JavaScript-based technologies</h3>
-        <p class="mission">"Our mission is to empower developers to push the boundaries of innovation by providing and
-            promoting open-source, JavaScript and Node.js-based technology that simplifies the building of core
-            components for tomorrow's architectures. We strive to create faster and simpler solutions that enable
-            developers to build more performant and efficient applications..."
-            </br>
-            <span class="founder-avatar">
-                <img src="founder-avatar.jpeg" alt="http://kyberneees.com">
-            </span>
-        </p>
 
         <div class="highlights">
             <div class="highlight">
@@ -268,7 +270,8 @@
                 <h3>keycloak-backend</h3>
                 <img alt="npm" src="https://img.shields.io/npm/dw/keycloak-backend">
                 <a href="https://github.com/BackendStack21/keycloak-backend">View on GitHub</a>
-                <p>A Node.js connector library for Keycloak. The module simplifies the integration of backend services, providing a foundation for high-performance authorization middlewares.</p>
+                <p>A Node.js connector library for Keycloak. The module simplifies the integration of backend services,
+                    providing a foundation for high-performance authorization middlewares.</p>
             </div>
             <div class="project">
                 <span class="project-avatar">
@@ -289,6 +292,19 @@
                 <a href="https://github.com/BackendStack21/http-cache-middleware">View on GitHub</a>
                 <p>High performance connect-like HTTP cache middleware for Node.js. So your latency can decrease to
                     single digit milliseconds 🚀</p>
+            </div>
+            <div>
+                <p class="mission">"Our mission is to empower developers to push the boundaries of innovation by
+                    providing and
+                    promoting open-source, JavaScript and Node.js-based technology that simplifies the building of core
+                    components for tomorrow's architectures. We strive to create faster and simpler solutions that
+                    enable
+                    developers to build more performant and efficient applications..."
+                    </br>
+                    <span class="founder-avatar">
+                        <img src="founder-avatar.jpeg" alt="http://kyberneees.com">
+                    </span>
+                </p>
             </div>
         </div>
 
