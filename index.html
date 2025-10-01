@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,194 +84,549 @@
 
     <style nonce="MyStyle">
       :root {
-        --bg: #0d1117;
-        --surface: #161b22;
-        --text-primary: #c9d1d9;
-        --text-secondary: #8b949e;
-        --border: #30363d;
-        --accent: #58a6ff;
-        --radius: 8px;
-        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
-        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25);
-        --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.35);
+        --bg-dark: #0a0e17;
+        --bg-gradient: linear-gradient(135deg, #0a0e17 0%, #1a1f35 100%);
+        --surface: rgba(30, 35, 50, 0.8);
+        --surface-hover: rgba(40, 45, 65, 0.95);
+        --text-primary: #e6edf3;
+        --text-secondary: #9ca3af;
+        --border: rgba(99, 102, 241, 0.1);
+        --accent: #6366f1;
+        --accent-light: #818cf8;
+        --accent-glow: rgba(99, 102, 241, 0.3);
+        --success: #10b981;
+        --radius: 16px;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+        --shadow-glow: 0 0 30px var(--accent-glow);
       }
+
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         padding: 0;
-        background: var(--bg);
+        background: var(--bg-dark);
+        background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
         color: var(--text-primary);
-        font-family: Outfit, sans-serif;
-        line-height: 1.5;
+        font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.7;
+        overflow-x: hidden;
       }
+
+      /* Animated background effect */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 80% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+        animation: backgroundFloat 20s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @keyframes backgroundFloat {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(20px, 20px);
+        }
+      }
+
       a {
+        color: var(--accent-light);
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      a:hover {
         color: var(--accent);
         text-decoration: none;
-        transition: color 0.2s ease;
       }
-      a:hover {
-        color: var(--text-primary);
-        text-decoration: underline;
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        transition: width 0.3s ease;
       }
+
+      a:hover::after {
+        width: 100%;
+      }
+
       header.header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        padding: 12px;
-        font-size: 14px;
+        gap: 12px;
+        padding: 20px 24px;
+        font-size: 15px;
         font-weight: 600;
         color: var(--text-primary);
-        background: var(--surface);
-        box-shadow: var(--shadow-md);
-        border-radius: 0 0 var(--radius) var(--radius);
+        background: rgba(10, 14, 23, 0.95);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(99, 102, 241, 0.1);
+        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        animation: slideDown 0.5s ease;
       }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      header.header img.logo {
+        transition: transform 0.3s ease;
+      }
+
+      header.header:hover img.logo {
+        transform: rotate(10deg) scale(1.1);
+      }
+
       .container {
-        max-width: 1100px;
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 24px;
+        padding: 48px 24px;
+
+        h3 {
+          padding-bottom: 15px;
+        }
       }
+
       .hero {
         text-align: center;
-        margin-bottom: 48px;
+        margin-bottom: 80px;
+        animation: fadeInUp 0.8s ease;
       }
-      .hero img.logo {
-        max-width: 120px;
-        margin-bottom: 16px;
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
+
       .hero h1 {
+        margin: 0 0 16px 0;
+        font-size: clamp(32px, 5vw, 56px);
+        font-weight: 700;
+        color: var(--text-primary);
+        background: linear-gradient(135deg, #e6edf3 0%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .hero h3 {
         margin: 0;
-        font-size: 32px;
-        color: var(--text-primary);
-      }
-      .hero p {
-        margin: 8px 0 0;
+        font-size: clamp(16px, 2.5vw, 20px);
+        font-weight: 400;
         color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
       }
+
       h2 {
-        font-size: 24px;
-        margin: 40px 0 16px;
+        font-size: clamp(28px, 4vw, 36px);
+        font-weight: 700;
+        margin: 80px 0 40px;
         color: var(--text-primary);
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 8px;
+        position: relative;
+        padding-bottom: 16px;
+        text-align: center;
+        animation: fadeInUp 0.8s ease;
       }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        border-radius: 2px;
+      }
+
       .projects,
       .highlights {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+        margin-bottom: 40px;
       }
+
       .project,
       .highlight {
+        position: relative;
         background: var(--surface);
+        backdrop-filter: blur(20px);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 24px;
+        padding: 32px;
         box-shadow: var(--shadow-sm);
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center;
+        overflow: hidden;
+        animation: fadeInUp 0.8s ease backwards;
       }
+
+      .highlight:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .highlight:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .highlight:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .project::before,
+      .highlight::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
       .project:hover,
       .highlight:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateY(-2px);
+        background: var(--surface-hover);
+        box-shadow: var(--shadow-md), var(--shadow-glow);
+        transform: translateY(-8px);
+        border-color: var(--accent);
       }
+
+      .project:hover::before,
+      .highlight:hover::before {
+        transform: scaleX(1);
+      }
+
       .highlight h3,
       .project h3 {
-        margin-top: 0;
-        font-size: 18px;
+        margin: 0 0 16px 0;
+        font-size: 22px;
+        font-weight: 600;
         color: var(--text-primary);
+        letter-spacing: -0.01em;
       }
+
       .highlight p,
       .project p {
         color: var(--text-secondary);
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 1.7;
+        margin: 0;
       }
-      .project-avatar img {
-        max-width: 80px;
-        max-height: 80px;
-        margin-bottom: 16px;
-      }
-      .project > a {
-        display: block;
-        margin: 16px auto 0;
-        color: var(--accent);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: color 0.2s ease;
-      }
-      .project > a:hover {
-        color: var(--text-primary);
-        text-decoration: underline;
-      }
-      footer.footer {
-        text-align: center;
-        padding: 24px;
-        color: var(--text-secondary);
-        border-top: 1px solid var(--border);
-        font-size: 14px;
-      }
-      @media (max-width: 600px) {
-        .hero h1 {
-          font-size: 28px;
-        }
-        h2 {
-          font-size: 20px;
-        }
-      }
-      .button-container {
-        margin-top: 80px; /* increased separation */
+
+      .project-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 20px;
-        text-align: center;
+        height: 100px;
       }
-      .large-button {
+
+      .project-avatar img {
+        max-width: 100px;
+        max-height: 100px;
+        transition: transform 0.4s ease;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+      }
+
+      .project:hover .project-avatar img {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .project-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .project > img {
+        margin: 0;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+      }
+
+      .project:hover > img {
+        opacity: 1;
+      }
+
+      .project > a {
         display: inline-block;
-        padding: 15px 40px;
-        background-color: #21262d;
-        color: var(--text-primary);
-        border: 1px solid var(--border);
-        border-radius: 5px;
+        margin: 0;
+        padding: 10px 24px;
+        color: var(--accent-light);
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .project > a::after {
+        display: none;
+      }
+
+      .project > a:hover {
+        background: var(--accent);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--accent-glow);
+      }
+
+      footer.footer {
+        position: relative;
+        text-align: center;
+        padding: 48px 24px;
+        color: var(--text-secondary);
+        background: rgba(10, 14, 23, 0.8);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border);
+        font-size: 15px;
+        margin-top: 80px;
+      }
+
+      footer.footer a {
+        color: var(--accent-light);
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      footer.footer a:hover {
+        color: var(--accent);
+      }
+
+      .button-container {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        text-align: center;
+        animation: fadeInUp 1s ease 0.5s backwards;
+      }
+
+      .large-button {
+        position: relative;
+        display: inline-block;
+        padding: 18px 48px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
         cursor: pointer;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
-        box-shadow: var(--shadow-sm);
-        transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 8px 24px var(--accent-glow), var(--shadow-md);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        letter-spacing: 0.02em;
       }
+
+      .large-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .large-button:hover::before {
+        left: 100%;
+      }
+
+      .large-button::after {
+        display: none;
+      }
+
       .large-button:hover {
-        background-color: #30363d;
-        color: var(--text-primary);
-        border-color: #8b949e;
-        transform: translateY(-2px);
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 12px 32px var(--accent-glow), var(--shadow-lg);
+        color: white;
       }
+
+      .large-button:active {
+        transform: translateY(-2px) scale(1.02);
+      }
+
       .stars-badge {
-        margin-top: 24px;
+        margin-top: 32px;
         display: inline-block;
       }
+
       .stars-badge img {
-        transition: transform 0.2s ease;
+        transition: transform 0.3s ease;
+        filter: brightness(1.1);
       }
-      .stars-badge img:hover {
-        transform: scale(1.05);
+
+      .stars-badge:hover img {
+        transform: scale(1.1);
       }
+
       img {
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-dark);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent);
         border-radius: 5px;
-        transition: border-radius 0.2s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-light);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 32px 20px;
+        }
+
+        header.header {
+          padding: 16px 20px;
+          font-size: 14px;
+          flex-wrap: wrap;
+        }
+
+        .projects,
+        .highlights {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        h2 {
+          margin: 60px 0 32px;
+        }
+
+        .button-container {
+          margin-top: 60px;
+        }
+
+        .large-button {
+          padding: 16px 40px;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .hero h3 {
+          font-size: 16px;
+        }
+
+        .project,
+        .highlight {
+          padding: 24px;
+        }
+
+        .large-button {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      /* Accessibility improvements */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Focus styles for accessibility */
+      a:focus-visible,
+      button:focus-visible,
+      .large-button:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
       }
     </style>
   </head>
 
   <body>
     <header class="header">
-      <img src="logo-v2.png" alt="21no.de logo" class="logo" height="45" /> 21no.de - Build the internet faster and simpler with
+      <img src="logo-v2.png" alt="Logo" class="logo" height="45" /> 21no.de - Build the internet with faster and simpler
       JavaScript 🚀
     </header>
     <div class="container">
       <div>
-        <h1>Software components for the 21st century!</h1>
+        <h1>Software components for the 21 century!</h1>
       </div>
       <h3>Empowering developers to innovate with faster JavaScript and Node.js based technologies</h3>
 
@@ -302,14 +657,14 @@
       <div class="projects">
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/jwt-keys-generator.svg" alt="JWT-Keys Generator logo" width="250" />
+            <img src="projects/jwt-keys-generator.svg" width="250" />
           </span>
           <h3>JWT-Keys Generator</h3>
           <img
             alt="GitHub Repo stars"
             src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api"
           />
-          <a rel="noopener noreferrer" href="https://jwt-keys.21no.de/">Official Website</a>
+          <a href="https://jwt-keys.21no.de/">Official Website</a>
           <p>
             A Reliable, Free JWT Signing/Verification Key Generator Using OpenSSL.
             <br /><br />
@@ -321,10 +676,10 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/r7-logo.png" alt="Realtime Pub/Sub logo" width="250" />
+            <img src="projects/r7-logo.png" width="250" />
           </span>
           <h3>Realtime Pub/Sub</h3>
-          <a rel="noopener noreferrer" href="https://realtime.21no.de/">Official Website</a>
+          <a href="https://realtime.21no.de/">Official Website</a>
           <p>
             Realtime Pub/Sub is a platform that easily enables your applications with realtime Pub/Sub capabilities via
             WebSockets.
@@ -336,10 +691,10 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/idp.svg" alt="Identity Provider logo" width="250" />
+            <img src="projects/idp.svg" width="250" />
           </span>
           <h3>Identity Provider</h3>
-          <a rel="noopener noreferrer" href="https://idp.21no.de/api">Official Website</a>
+          <a href="https://idp.21no.de/api">Official Website</a>
           <p>
             The service offers a streamlined approach to user and device authentication, designed with an emphasis on
             scalable and lightweight methods.
@@ -352,10 +707,10 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/csp-generator.png" alt="CSP Generator logo" width="250" />
+            <img src="projects/csp-generator.png" width="250" />
           </span>
           <h3>CSP Generator</h3>
-          <a rel="noopener noreferrer" href="https://csp-generator.21no.de/">Official Website</a>
+          <a href="https://csp-generator.21no.de/">Official Website</a>
           <p>
             The CSP Generator is a powerful utility for analyzing, generating, and managing Content Security Policy
             (CSP) headers, making it easy to secure your web applications.
@@ -369,11 +724,13 @@
       <div class="projects">
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/bungate-logo.png" alt="bungate logo" width="250" />
+            <img src="projects/bungate-logo.png" width="250" />
           </span>
           <h3>bungate</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/bungate" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/bungate">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/bungate" />
+            <a href="https://github.com/BackendStack21/bungate">View on GitHub</a>
+          </div>
           <p>
             Bungate is a next-generation HTTP gateway and load balancer that harnesses the incredible speed of Bun to
             deliver unparalleled performance for modern web applications.
@@ -383,11 +740,13 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/restana-logo.svg" alt="restana logo" width="250" />
+            <img src="projects/restana-logo.svg" width="250" />
           </span>
           <h3>restana</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/restana" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/restana">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/restana" />
+            <a href="https://github.com/BackendStack21/restana">View on GitHub</a>
+          </div>
           <p>
             Restana is a lightweight and fast Node.js framework for building RESTful APIs. Inspired by Express, it
             provides a simple and intuitive API for routing, handling requests and responses, and middleware management.
@@ -397,14 +756,16 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/jwt-keys-generator.svg" alt="JWT-Keys Generator logo" width="250" />
+            <img src="projects/jwt-keys-generator.svg" width="250" />
           </span>
           <h3>JWT-Keys Generator</h3>
-          <img
-            alt="GitHub Repo stars"
-            src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api"
-          />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/jwt-keys-generator-api">View on GitHub</a>
+          <div class="project-buttons">
+            <img
+              alt="GitHub Repo stars"
+              src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api"
+            />
+            <a href="https://github.com/BackendStack21/jwt-keys-generator-api">View on GitHub</a>
+          </div>
           <p>
             A Reliable, Free JWT Signing/Verification Key Generator Using OpenSSL.
             <br /><br />
@@ -417,11 +778,13 @@
 
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/fast-gateway-logo.svg" alt="fast-gateway logo" width="250" />
+            <img src="projects/fast-gateway-logo.svg" width="250" />
           </span>
           <h3>fast-gateway</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/fast-gateway" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/fast-gateway">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/fast-gateway" />
+            <a href="https://github.com/BackendStack21/fast-gateway">View on GitHub</a>
+          </div>
           <p>
             Fast-gateway is an easy to use Node.js API gateway framework built to handle large scale API traffic with
             great performance and scalability. Written with JavaScript, it is a framework for the masses!
@@ -429,11 +792,13 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/0http-logo.svg" alt="0http logo" width="250" />
+            <img src="projects/0http-logo.svg" width="250" />
           </span>
           <h3>0http</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/0http" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/0http">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/0http" />
+            <a href="https://github.com/BackendStack21/0http">View on GitHub</a>
+          </div>
           <p>
             0http is a lightweight and extremely fast Node.js framework for building RESTful APIs. Highly optimized for
             throughput, barely extending core HTTP interfaces, the framework is a great candidate for solutions that
@@ -442,24 +807,28 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/0http-logo.svg" alt="0http logo" width="250" />
+            <img src="projects/0http-logo.svg" width="250" />
           </span>
           <h3>0http-bun</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/0http-bun" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/0http-bun">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/0http-bun" />
+            <a href="https://github.com/BackendStack21/0http-bun">View on GitHub</a>
+          </div>
           <p>
-            A high-performance, minimalist HTTP framework for <a rel="noopener noreferrer" href="https://bun.sh/">Bun</a>, inspired by
-            <a rel="noopener noreferrer" href="https://github.com/BackendStack21/0http">0http</a>. Built specifically to leverage Bun's native
+            A high-performance, minimalist HTTP framework for <a href="https://bun.sh/">Bun</a>, inspired by
+            <a href="https://github.com/BackendStack21/0http">0http</a>. Built specifically to leverage Bun's native
             performance capabilities with a developer-friendly API.
           </p>
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/keycloak-backend-logo.svg" alt="keycloak-backend logo" width="250" />
+            <img src="projects/keycloak-backend-logo.svg" width="250" />
           </span>
           <h3>keycloak-backend</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/keycloak-backend" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/keycloak-backend">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/keycloak-backend" />
+            <a href="https://github.com/BackendStack21/keycloak-backend">View on GitHub</a>
+          </div>
           <p>
             A Node.js connector library for Keycloak. The module simplifies the integration of backend services,
             providing a foundation for high-performance authorization middlewares.
@@ -467,11 +836,13 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/restana-static-logo.svg" alt="restana-static logo" width="250" />
+            <img src="projects/restana-static-logo.svg" width="250" />
           </span>
           <h3>restana-static</h3>
-          <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kyberneees/restana-static" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/restana-static">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kyberneees/restana-static" />
+            <a href="https://github.com/BackendStack21/restana-static">View on GitHub</a>
+          </div>
           <p>
             Efficiently serve static files using Node.js and Docker containers:
             https://itnext.io/restana-static-serving-the-frontend-with-node-js-beyond-nginx-e45fdb2e49cb
@@ -479,11 +850,13 @@
         </div>
         <div class="project">
           <span class="project-avatar">
-            <img src="projects/http-cache-middleware-logo.svg" alt="http-cache-middleware logo" width="250" />
+            <img src="projects/http-cache-middleware-logo.svg" width="250" />
           </span>
           <h3>http-cache-middleware</h3>
-          <img alt="npm" src="https://img.shields.io/npm/dw/http-cache-middleware" />
-          <a rel="noopener noreferrer" href="https://github.com/BackendStack21/http-cache-middleware">View on GitHub</a>
+          <div class="project-buttons">
+            <img alt="npm" src="https://img.shields.io/npm/dw/http-cache-middleware" />
+            <a href="https://github.com/BackendStack21/http-cache-middleware">View on GitHub</a>
+          </div>
           <p>
             High performance connect-like HTTP cache middleware for Node.js. So your latency can decrease to single
             digit milliseconds 🚀
@@ -492,7 +865,7 @@
       </div>
 
       <div class="button-container">
-        <a class="large-button" rel="noopener noreferrer" href="https://github.com/BackendStack21">Explore More Projects</a>
+        <a class="large-button" href="https://github.com/BackendStack21">Explore More Projects</a>
         <br /><br />
         <div class="stars-badge">
           <img alt="GitHub Org's stars" src="https://img.shields.io/github/stars/BackendStack21?style=social" />
