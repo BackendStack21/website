@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- SEO Meta Tags -->
-    <title>21no.de - High-Performance JavaScript & Node.js Components for Modern Web Development</title>
+    <title>21no.de - High-Performance JavaScript & Node.js Components</title>
     <meta
       name="description"
-      content="Build faster web applications with 21no.de's open-source JavaScript and Node.js components. High-performance frameworks like restana, fast-gateway, and 0http for scalable APIs and microservices."
+      content="Build faster web applications with 21no.de's open-source JavaScript and Node.js components. High-performance frameworks like restana, fast-gateway, and 0http."
     />
     <meta
       name="keywords"
-      content="JavaScript, Node.js, API framework, microservices, restana, fast-gateway, 0http, open source, web development, performance, scalability"
+      content="JavaScript, Node.js, API framework, microservices, restana, fast-gateway, 0http, open source, web development, performance"
     />
     <meta name="author" content="21no.de" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <link rel="canonical" href="https://21no.de/" />
+    <meta name="theme-color" content="#0f172a" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -25,870 +23,1818 @@
     <meta property="og:title" content="21no.de - High-Performance JavaScript & Node.js Components" />
     <meta
       property="og:description"
-      content="Build faster web applications with open-source JavaScript and Node.js components. High-performance frameworks for scalable APIs and microservices."
+      content="Build faster web applications with open-source JavaScript and Node.js components."
     />
     <meta property="og:image" content="https://21no.de/logo-v2.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="21no.de" />
-    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://21no.de/" />
     <meta name="twitter:title" content="21no.de - High-Performance JavaScript & Node.js Components" />
     <meta
       name="twitter:description"
-      content="Build faster web applications with open-source JavaScript and Node.js components. High-performance frameworks for scalable APIs and microservices."
+      content="Build faster web applications with open-source JavaScript and Node.js components."
     />
     <meta name="twitter:image" content="https://21no.de/logo-v2.png" />
-    <meta name="twitter:creator" content="@21node" />
-    <meta name="twitter:site" content="@21node" />
 
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#0d1117" />
-    <meta name="msapplication-TileColor" content="#0d1117" />
-    <meta name="application-name" content="21no.de" />
-    <meta name="apple-mobile-web-app-title" content="21no.de" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "21no.de",
-        "url": "https://21no.de",
-        "logo": "https://21no.de/logo-v2.png",
-        "description": "Open-source JavaScript and Node.js components for building high-performance web applications and APIs",
-        "sameAs": ["https://github.com/BackendStack21"],
-        "foundingDate": "2022",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "contact@21no.de",
-          "contactType": "Customer Service"
-        }
-      }
-    </script>
-
-    <!-- Favicon and Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="logo-v2.png" />
-    <link rel="apple-touch-icon" href="logo-v2.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="logo-v2.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="logo-v2.png" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
-
-    <style nonce="MyStyle">
-      :root {
-        --bg-dark: #0a0e17;
-        --bg-gradient: linear-gradient(135deg, #0a0e17 0%, #1a1f35 100%);
-        --surface: rgba(30, 35, 50, 0.8);
-        --surface-hover: rgba(40, 45, 65, 0.95);
-        --text-primary: #e6edf3;
-        --text-secondary: #9ca3af;
-        --border: rgba(99, 102, 241, 0.1);
-        --accent: #6366f1;
-        --accent-light: #818cf8;
-        --accent-glow: rgba(99, 102, 241, 0.3);
-        --success: #10b981;
-        --radius: 16px;
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-        --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-        --shadow-glow: 0 0 30px var(--accent-glow);
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg-dark);
-        background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
-          radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
-          radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
-        color: var(--text-primary);
-        font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
-
-      /* Animated background effect */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-          radial-gradient(circle at 80% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
-        animation: backgroundFloat 20s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      @keyframes backgroundFloat {
-        0%,
-        100% {
-          transform: translate(0, 0);
-        }
-        50% {
-          transform: translate(20px, 20px);
-        }
-      }
-
-      a {
-        color: var(--accent-light);
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-      }
-
-      a:hover {
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      a::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-light));
-        transition: width 0.3s ease;
-      }
-
-      a:hover::after {
-        width: 100%;
-      }
-
-      header.header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px 24px;
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--text-primary);
-        background: rgba(10, 14, 23, 0.95);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(99, 102, 241, 0.1);
-        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-        animation: slideDown 0.5s ease;
-      }
-
-      @keyframes slideDown {
-        from {
-          transform: translateY(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      header.header img.logo {
-        transition: transform 0.3s ease;
-      }
-
-      header.header:hover img.logo {
-        transform: rotate(10deg) scale(1.1);
-      }
-
-      .container {
-        position: relative;
-        z-index: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 48px 24px;
-
-        h3 {
-          padding-bottom: 15px;
-        }
-      }
-
-      .hero {
-        text-align: center;
-        margin-bottom: 80px;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero h1 {
-        margin: 0 0 16px 0;
-        font-size: clamp(32px, 5vw, 56px);
-        font-weight: 700;
-        color: var(--text-primary);
-        background: linear-gradient(135deg, #e6edf3 0%, #a5b4fc 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-      }
-
-      .hero h3 {
-        margin: 0;
-        font-size: clamp(16px, 2.5vw, 20px);
-        font-weight: 400;
-        color: var(--text-secondary);
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.6;
-      }
-
-      h2 {
-        font-size: clamp(28px, 4vw, 36px);
-        font-weight: 700;
-        margin: 80px 0 40px;
-        color: var(--text-primary);
-        position: relative;
-        padding-bottom: 16px;
-        text-align: center;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      h2::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-light));
-        border-radius: 2px;
-      }
-
-      .projects,
-      .highlights {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 32px;
-        margin-bottom: 40px;
-      }
-
-      .project,
-      .highlight {
-        position: relative;
-        background: var(--surface);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 32px;
-        box-shadow: var(--shadow-sm);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        text-align: center;
-        overflow: hidden;
-        animation: fadeInUp 0.8s ease backwards;
-      }
-
-      .highlight:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .highlight:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .highlight:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-
-      .project::before,
-      .highlight::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-light));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-      }
-
-      .project:hover,
-      .highlight:hover {
-        background: var(--surface-hover);
-        box-shadow: var(--shadow-md), var(--shadow-glow);
-        transform: translateY(-8px);
-        border-color: var(--accent);
-      }
-
-      .project:hover::before,
-      .highlight:hover::before {
-        transform: scaleX(1);
-      }
-
-      .highlight h3,
-      .project h3 {
-        margin: 0 0 16px 0;
-        font-size: 22px;
-        font-weight: 600;
-        color: var(--text-primary);
-        letter-spacing: -0.01em;
-      }
-
-      .highlight p,
-      .project p {
-        color: var(--text-secondary);
-        font-size: 15px;
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      .project-avatar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        height: 100px;
-      }
-
-      .project-avatar img {
-        max-width: 100px;
-        max-height: 100px;
-        transition: transform 0.4s ease;
-        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-      }
-
-      .project:hover .project-avatar img {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      .project-buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        margin: 20px 0;
-        flex-wrap: wrap;
-      }
-
-      .project > img {
-        margin: 0;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
-      }
-
-      .project:hover > img {
-        opacity: 1;
-      }
-
-      .project > a {
-        display: inline-block;
-        margin: 0;
-        padding: 10px 24px;
-        color: var(--accent-light);
-        background: rgba(99, 102, 241, 0.1);
-        border: 1px solid var(--accent);
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .project > a::after {
-        display: none;
-      }
-
-      .project > a:hover {
-        background: var(--accent);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--accent-glow);
-      }
-
-      footer.footer {
-        position: relative;
-        text-align: center;
-        padding: 48px 24px;
-        color: var(--text-secondary);
-        background: rgba(10, 14, 23, 0.8);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid var(--border);
-        font-size: 15px;
-        margin-top: 80px;
-      }
-
-      footer.footer a {
-        color: var(--accent-light);
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      footer.footer a:hover {
-        color: var(--accent);
-      }
-
-      .button-container {
-        margin-top: 80px;
-        margin-bottom: 40px;
-        text-align: center;
-        animation: fadeInUp 1s ease 0.5s backwards;
-      }
-
-      .large-button {
-        position: relative;
-        display: inline-block;
-        padding: 18px 48px;
-        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: 600;
-        text-decoration: none;
-        box-shadow: 0 8px 24px var(--accent-glow), var(--shadow-md);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: hidden;
-        letter-spacing: 0.02em;
-      }
-
-      .large-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-      }
-
-      .large-button:hover::before {
-        left: 100%;
-      }
-
-      .large-button::after {
-        display: none;
-      }
-
-      .large-button:hover {
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: 0 12px 32px var(--accent-glow), var(--shadow-lg);
-        color: white;
-      }
-
-      .large-button:active {
-        transform: translateY(-2px) scale(1.02);
-      }
-
-      .stars-badge {
-        margin-top: 32px;
-        display: inline-block;
-      }
-
-      .stars-badge img {
-        transition: transform 0.3s ease;
-        filter: brightness(1.1);
-      }
-
-      .stars-badge:hover img {
-        transform: scale(1.1);
-      }
-
-      img {
-        border-radius: 8px;
-        transition: all 0.3s ease;
-      }
-
-      /* Scrollbar styling */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--bg-dark);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent);
-        border-radius: 5px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-light);
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .container {
-          padding: 32px 20px;
-        }
-
-        header.header {
-          padding: 16px 20px;
-          font-size: 14px;
-          flex-wrap: wrap;
-        }
-
-        .projects,
-        .highlights {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-
-        h2 {
-          margin: 60px 0 32px;
-        }
-
-        .button-container {
-          margin-top: 60px;
-        }
-
-        .large-button {
-          padding: 16px 40px;
-          font-size: 16px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero h1 {
-          font-size: 32px;
-        }
-
-        .hero h3 {
-          font-size: 16px;
-        }
-
-        .project,
-        .highlight {
-          padding: 24px;
-        }
-
-        .large-button {
-          width: 100%;
-          max-width: 300px;
-        }
-      }
-
-      /* Accessibility improvements */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      /* Focus styles for accessibility */
-      a:focus-visible,
-      button:focus-visible,
-      .large-button:focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 4px;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <header class="header">
-      <img src="logo-v2.png" alt="Logo" class="logo" height="45" /> 21no.de - Build the internet with faster and simpler
-      JavaScript 🚀
-    </header>
-    <div class="container">
-      <div>
-        <h1>Software components for the 21 century!</h1>
-      </div>
-      <h3>Empowering developers to innovate with faster JavaScript and Node.js based technologies</h3>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-      <div class="highlights">
-        <div class="highlight">
-          <h3>Supporting free and open-source</h3>
-          <p>
-            We promote free and open-source software components, allowing developers to easily use, modify, and
-            contribute to the project.
-          </p>
-        </div>
-        <div class="highlight">
-          <h3>Performance and efficiency</h3>
-          <p>
-            Our components are designed with performance and efficiency in mind, ensuring that your applications run
-            smoothly and quickly.
-          </p>
-        </div>
-        <div class="highlight">
-          <h3>Simpler and foundational building blocks</h3>
-          <p>
-            We strive to provide foundational building blocks that are simpler and easier to use, allowing developers to
-            focus on building their applications rather than reinventing the wheel.
-          </p>
-        </div>
-      </div>
-      <!-- <h2>SaaS/PaaS Solutions</h2>
-      <div class="projects">
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/jwt-keys-generator.svg" width="250" />
-          </span>
-          <h3>JWT-Keys Generator</h3>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="/" class="logo">
+          <img src="logo-v2.png" alt="21no.de Logo" width="32" height="32" />
+          <span>21no.de</span>
+        </a>
+        <div class="nav-links">
+          <a href="#projects" class="nav-link">Projects</a>
           <img
-            alt="GitHub Repo stars"
-            src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api"
+            src="https://img.shields.io/github/stars/BackendStack21?style=flat-square&labelColor=1e293b&color=38bdf8"
+            alt="Total GitHub Stars"
+            class="nav-badge"
           />
-          <a href="https://jwt-keys.21no.de/">Official Website</a>
-          <p>
-            A Reliable, Free JWT Signing/Verification Key Generator Using OpenSSL.
-            <br /><br />
-            <i>
-              Generate JWT signing and verification keys effortlessly with our trusted, user-friendly tool backed by
-              OpenSSL.
-            </i>
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/r7-logo.png" width="250" />
-          </span>
-          <h3>Realtime Pub/Sub</h3>
-          <a href="https://realtime.21no.de/">Official Website</a>
-          <p>
-            Realtime Pub/Sub is a platform that easily enables your applications with realtime Pub/Sub capabilities via
-            WebSockets.
-            <br /><br />
-            <i>
-              A free and commercial solution, aimed at supporting open-source development and innovations at 21no.de.
-            </i>
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/idp.svg" width="250" />
-          </span>
-          <h3>Identity Provider</h3>
-          <a href="https://idp.21no.de/api">Official Website</a>
-          <p>
-            The service offers a streamlined approach to user and device authentication, designed with an emphasis on
-            scalable and lightweight methods.
-            <br /><br />
-            <i>
-              A free and commercial solution (in development), aimed at accelerating the adoption of secure
-              authentication methods.
-            </i>
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/csp-generator.png" width="250" />
-          </span>
-          <h3>CSP Generator</h3>
-          <a href="https://csp-generator.21no.de/">Official Website</a>
-          <p>
-            The CSP Generator is a powerful utility for analyzing, generating, and managing Content Security Policy
-            (CSP) headers, making it easy to secure your web applications.
-            <br /><br />
-            <i> Evaluate and refine CSP rules to defend against XSS, data leaks, and emerging web threats. </i>
-          </p>
-        </div>
-      </div> -->
-
-      <h2>Top Projects</h2>
-      <div class="projects">
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/bungate-logo.png" width="250" />
-          </span>
-          <h3>bungate</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/bungate" />
-            <a href="https://github.com/BackendStack21/bungate">View on GitHub</a>
-          </div>
-          <p>
-            Bungate is a next-generation HTTP gateway and load balancer that harnesses the incredible speed of Bun to
-            deliver unparalleled performance for modern web applications.
-            <br /><br />
-            Built from the ground up with TypeScript, it provides enterprise-grade features with zero-config simplicity.
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/restana-logo.svg" width="250" />
-          </span>
-          <h3>restana</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/restana" />
-            <a href="https://github.com/BackendStack21/restana">View on GitHub</a>
-          </div>
-          <p>
-            Restana is a lightweight and fast Node.js framework for building RESTful APIs. Inspired by Express, it
-            provides a simple and intuitive API for routing, handling requests and responses, and middleware management.
-            It is designed to be easy to use and integrate with other Node.js modules, allowing developers to quickly
-            build scalable and maintainable APIs.
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/jwt-keys-generator.svg" width="250" />
-          </span>
-          <h3>JWT-Keys Generator</h3>
-          <div class="project-buttons">
-            <img
-              alt="GitHub Repo stars"
-              src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api"
-            />
-            <a href="https://github.com/BackendStack21/jwt-keys-generator-api">View on GitHub</a>
-          </div>
-          <p>
-            A Reliable, Free JWT Signing/Verification Key Generator Using OpenSSL.
-            <br /><br />
-            <i>
-              Generate JWT signing and verification keys effortlessly with our trusted, user-friendly tool backed by
-              OpenSSL.
-            </i>
-          </p>
-        </div>
-
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/fast-gateway-logo.svg" width="250" />
-          </span>
-          <h3>fast-gateway</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/fast-gateway" />
-            <a href="https://github.com/BackendStack21/fast-gateway">View on GitHub</a>
-          </div>
-          <p>
-            Fast-gateway is an easy to use Node.js API gateway framework built to handle large scale API traffic with
-            great performance and scalability. Written with JavaScript, it is a framework for the masses!
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/0http-logo.svg" width="250" />
-          </span>
-          <h3>0http</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/0http" />
-            <a href="https://github.com/BackendStack21/0http">View on GitHub</a>
-          </div>
-          <p>
-            0http is a lightweight and extremely fast Node.js framework for building RESTful APIs. Highly optimized for
-            throughput, barely extending core HTTP interfaces, the framework is a great candidate for solutions that
-            require low latency and performance.
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/0http-logo.svg" width="250" />
-          </span>
-          <h3>0http-bun</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/0http-bun" />
-            <a href="https://github.com/BackendStack21/0http-bun">View on GitHub</a>
-          </div>
-          <p>
-            A high-performance, minimalist HTTP framework for <a href="https://bun.sh/">Bun</a>, inspired by
-            <a href="https://github.com/BackendStack21/0http">0http</a>. Built specifically to leverage Bun's native
-            performance capabilities with a developer-friendly API.
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/keycloak-backend-logo.svg" width="250" />
-          </span>
-          <h3>keycloak-backend</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/keycloak-backend" />
-            <a href="https://github.com/BackendStack21/keycloak-backend">View on GitHub</a>
-          </div>
-          <p>
-            A Node.js connector library for Keycloak. The module simplifies the integration of backend services,
-            providing a foundation for high-performance authorization middlewares.
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/restana-static-logo.svg" width="250" />
-          </span>
-          <h3>restana-static</h3>
-          <div class="project-buttons">
-            <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kyberneees/restana-static" />
-            <a href="https://github.com/BackendStack21/restana-static">View on GitHub</a>
-          </div>
-          <p>
-            Efficiently serve static files using Node.js and Docker containers:
-            https://itnext.io/restana-static-serving-the-frontend-with-node-js-beyond-nginx-e45fdb2e49cb
-          </p>
-        </div>
-        <div class="project">
-          <span class="project-avatar">
-            <img src="projects/http-cache-middleware-logo.svg" width="250" />
-          </span>
-          <h3>http-cache-middleware</h3>
-          <div class="project-buttons">
-            <img alt="npm" src="https://img.shields.io/npm/dw/http-cache-middleware" />
-            <a href="https://github.com/BackendStack21/http-cache-middleware">View on GitHub</a>
-          </div>
-          <p>
-            High performance connect-like HTTP cache middleware for Node.js. So your latency can decrease to single
-            digit milliseconds 🚀
-          </p>
+          <a href="https://github.com/BackendStack21" target="_blank" class="btn btn-sm btn-outline">
+            <svg
+              height="20"
+              width="20"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              style="margin-right: 6px; vertical-align: text-bottom"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              ></path>
+            </svg>
+            GitHub
+          </a>
         </div>
       </div>
+    </nav>
 
-      <div class="button-container">
-        <a class="large-button" href="https://github.com/BackendStack21">Explore More Projects</a>
-        <br /><br />
-        <div class="stars-badge">
-          <img alt="GitHub Org's stars" src="https://img.shields.io/github/stars/BackendStack21?style=social" />
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="badge-wrapper">
+              <span class="badge">🚀 High Performance Primitives</span>
+            </div>
+            <h1 class="hero-title">
+              Build Faster with <br />
+              <span class="gradient-text">Modern Node.js/Bun Tools</span>
+            </h1>
+            <p class="hero-subtitle">
+              A curated collection of lightweight, zero-dependency JavaScript components designed for extreme
+              performance and scalability.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">Explore Ecosystem</a>
+              <a href="https://github.com/BackendStack21" target="_blank" class="btn btn-secondary">
+                View Organization
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🔓</div>
+              <h3>Open Source</h3>
+              <p>MIT licensed components that you can use, modify, and contribute to freely.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>High Performance</h3>
+              <p>Optimized for throughput and low latency, ensuring your apps run smoothly.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🧩</div>
+              <h3>Modular Design</h3>
+              <p>Foundational building blocks that let you focus on your business logic.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <div class="section-header">
+            <h2>The Ecosystem</h2>
+            <p>Powerful tools for your next big project</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Bungate -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>bungate</h3>
+                  <div class="tags">
+                    <span class="tag">Bun</span>
+                    <span class="tag">Gateway</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Next-generation HTTP gateway and load balancer harnessing the speed of Bun. Enterprise-grade features
+                with zero-config simplicity.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/bungate" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/bungate" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/bungate?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/bungate?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { Gateway } <span class="k">from</span> <span class="s">'bungate'</span>;
+
+<span class="k">const</span> gateway = <span class="k">new</span> <span class="f">Gateway</span>({
+  routes: [{
+    prefix: <span class="s">'/api'</span>,
+    target: <span class="s">'http://localhost:3000'</span>
+  }]
+});
+
+gateway.<span class="f">start</span>(<span class="n">8080</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- Restana -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>restana</h3>
+                  <div class="tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Framework</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Lightweight and fast Node.js framework for building RESTful APIs. Express-like syntax with superior
+                performance.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/restana" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/restana" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/restana?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/restana?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> service = <span class="f">require</span>(<span class="s">'restana'</span>)();
+
+service.<span class="f">get</span>(<span class="s">'/hello'</span>, (req, res) => {
+  res.<span class="f">send</span>(<span class="s">'Hello World!'</span>);
+});
+
+service.<span class="f">start</span>(<span class="n">3000</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- Fast Gateway -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>fast-gateway</h3>
+                  <div class="tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Gateway</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Easy to use Node.js API gateway framework built to handle large scale API traffic with great
+                performance.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/fast-gateway" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/fast-gateway" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/fast-gateway?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/fast-gateway?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> gateway = <span class="f">require</span>(<span class="s">'fast-gateway'</span>);
+<span class="k">const</span> server = <span class="f">gateway</span>({
+  routes: [{
+    prefix: <span class="s">'/admin'</span>,
+    target: <span class="s">'http://admin:3000'</span>
+  }]
+});
+server.<span class="f">start</span>(<span class="n">8080</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- 0http -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>0http</h3>
+                  <div class="tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Micro</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Extremely fast Node.js framework for building RESTful APIs. Optimized for throughput, barely extending
+                core HTTP interfaces.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/0http" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/0http" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/0http?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/0http?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> { router, server } = <span class="f">require</span>(<span class="s">'0http'</span>)();
+
+router.<span class="f">get</span>(<span class="s">'/'</span>, (req, res) => {
+  res.<span class="f">end</span>(<span class="s">'Hello'</span>);
+});
+
+server.<span class="f">listen</span>(<span class="n">3000</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- 0http-bun -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>0http-bun</h3>
+                  <div class="tags">
+                    <span class="tag">Bun</span>
+                    <span class="tag">Micro</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                High-performance, minimalist HTTP framework for Bun. Built to leverage Bun's native performance
+                capabilities.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/0http-bun" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/0http-bun" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/0http-bun?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/0http-bun?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> cero <span class="k">from</span> <span class="s">'0http-bun'</span>;
+<span class="k">const</span> { router, server } = <span class="f">cero</span>();
+
+router.<span class="f">get</span>(<span class="s">'/'</span>, () => <span class="k">new</span> <span class="f">Response</span>(<span class="s">'Hi'</span>));
+
+server.<span class="f">listen</span>(<span class="n">3000</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- JWT Keys -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>JWT-Keys</h3>
+                  <div class="tags">
+                    <span class="tag">Security</span>
+                    <span class="tag">Tool</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Reliable, Free JWT Signing/Verification Key Generator Using OpenSSL. Generate keys effortlessly.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/jwt-keys-generator-api" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://hub.docker.com/r/kyberneees/jwt-keys-generator-api" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline></svg
+                  >Docker</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/jwt-keys-generator-api?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>Bash</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">docker</span> run --rm -p <span class="n">3000</span>:<span class="n">3000</span> kyberneees/jwt-keys-generator-api:latest
+
+<span class="k">curl</span> -s http://localhost:3000/api/generate/ES512</code></pre>
+              </div>
+            </article>
+
+            <!-- Keycloak Backend -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>keycloak-backend</h3>
+                  <div class="tags">
+                    <span class="tag">Auth</span>
+                    <span class="tag">Middleware</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Node.js connector library for Keycloak. Simplifies integration of backend services with high-performance
+                authorization.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/keycloak-backend" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/keycloak-backend" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/keycloak-backend?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/keycloak-backend?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> Keycloak = <span class="f">require</span>(<span class="s">'keycloak-backend'</span>).Keycloak;
+<span class="k">const</span> keycloak = <span class="k">new</span> <span class="f">Keycloak</span>({
+  realm: <span class="s">"my-realm"</span>,
+  keycloak_base_url: <span class="s">"https://auth.example.com"</span>
+});</code></pre>
+              </div>
+            </article>
+
+            <!-- Restana Static -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>restana-static</h3>
+                  <div class="tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Static</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Efficiently serve static files using Node.js and Docker containers. A high-performance alternative to
+                Nginx for static serving.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/restana-static" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://hub.docker.com/r/kyberneees/restana-static" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline></svg
+                  >Docker</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/restana-static?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/docker/pulls/kyberneees/restana-static?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="Docker Pulls"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>Dockerfile</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">FROM</span> kyberneees/restana-static:latest
+
+<span class="k">COPY</span> ./dist /app/dist</code></pre>
+              </div>
+            </article>
+
+            <!-- HTTP Cache -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>http-cache-middleware</h3>
+                  <div class="tags">
+                    <span class="tag">Cache</span>
+                    <span class="tag">Middleware</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                High performance connect-like HTTP cache middleware. Reduce latency to single digit milliseconds.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/http-cache-middleware" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/http-cache-middleware" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/http-cache-middleware?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/http-cache-middleware?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> cache = <span class="f">require</span>(<span class="s">'http-cache-middleware'</span>)();
+service.<span class="f">use</span>(cache);
+
+service.<span class="f">get</span>(<span class="s">'/'</span>, (req, res) => {
+  res.<span class="f">setHeader</span>(<span class="s">'x-cache-timeout'</span>, <span class="s">'1 hour'</span>);
+  res.<span class="f">send</span>(<span class="s">'Cached response'</span>);
+});</code></pre>
+              </div>
+            </article>
+
+            <!-- RProxy -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>rproxy</h3>
+                  <div class="tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Proxy</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                HTTP reverse proxy implementation based on Node.js and Docker. Simple, fast, and container-ready.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/rproxy" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://hub.docker.com/r/kyberneees/rproxy" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline></svg
+                  >Docker</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/rproxy?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/docker/pulls/kyberneees/rproxy?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="Docker Pulls"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>Usage</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code>// config.js
+<span class="k">module</span>.exports = {
+  routes: [{
+    prefix: <span class="s">'/api'</span>,
+    target: <span class="s">'https://httpbin.org'</span>
+  }]
+}
+
+# Run with Docker
+<span class="k">docker</span> run -p <span class="n">8080</span>:<span class="n">8080</span> \
+  -v $(pwd)/config.js:/rproxy/src/config.js \
+  kyberneees/rproxy</code></pre>
+              </div>
+            </article>
+
+            <!-- HTTP Lambda Proxy -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>http-lambda-proxy</h3>
+                  <div class="tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Lambda</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Seamlessly proxy HTTP requests to AWS Lambda functions. Bridge your standard HTTP stack with serverless.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/http-lambda-proxy" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/http-lambda-proxy" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/http-lambda-proxy?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/http-lambda-proxy?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> proxy = <span class="f">require</span>(<span class="s">'http-lambda-proxy'</span>);
+
+service.<span class="f">all</span>(<span class="s">'/*'</span>, (req, res) => {
+  <span class="f">proxy</span>(req, res, req.url, {
+    target: <span class="s">'my-lambda-function'</span>
+  });
+});</code></pre>
+              </div>
+            </article>
+
+            <!-- Fast Proxy Lite -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>fast-proxy-lite</h3>
+                  <div class="tags">
+                    <span class="tag">Proxy</span>
+                    <span class="tag">Lite</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Framework agnostic library to forward HTTP requests. Lightweight and focused on performance.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/fast-proxy-lite" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/fast-proxy-lite" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/fast-proxy-lite?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/fast-proxy-lite?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> { proxy } = <span class="f">require</span>(<span class="s">'fast-proxy-lite'</span>)({
+  base: <span class="s">'http://127.0.0.1:3000'</span>
+});
+
+<span class="f">proxy</span>(req, res, req.url);</code></pre>
+              </div>
+            </article>
+
+            <!-- CSP Generator -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>csp-generator</h3>
+                  <div class="tags">
+                    <span class="tag">Bun</span>
+                    <span class="tag">Security</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                A Bun package to generate Content Security Policy (CSP) headers easily and securely.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/csp-generator" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/csp-policy-gen" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/csp-generator?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/csp-policy-gen?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>Bash</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">bun</span> add csp-policy-gen
+
+# Usage
+<span class="k">bunx</span> csp-generator https://example.com</code></pre>
+              </div>
+            </article>
+
+            <!-- Item Store Redis -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>item-store-redis</h3>
+                  <div class="tags">
+                    <span class="tag">Redis</span>
+                    <span class="tag">Store</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Robust Redis repository implementation for storing and retrieving data with TypeScript support.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/item-store-redis" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/item-store-redis" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/item-store-redis?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/item-store-redis?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { ItemRepository } <span class="k">from</span> <span class="s">'item-store-redis'</span>;
+
+<span class="k">const</span> repo = <span class="k">new</span> <span class="f">ItemRepository</span>(<span class="s">'users'</span>, redisClient);
+<span class="k">await</span> repo.<span class="f">set</span>({ id: <span class="s">'1'</span>, name: <span class="s">'John'</span> });</code></pre>
+              </div>
+            </article>
+
+            <!-- Middleware If Unless -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>middleware-if-unless</h3>
+                  <div class="tags">
+                    <span class="tag">Logic</span>
+                    <span class="tag">Middleware</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Conditionally invoke connect-like middleware based on routing criteria. Flexible control flow.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/middleware-if-unless" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/middleware-if-unless" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/middleware-if-unless?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/middleware-if-unless?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> iu = <span class="f">require</span>(<span class="s">'middleware-if-unless'</span>)();
+
+app.<span class="f">use</span>(iu(middleware).<span class="f">unless</span>([
+  <span class="s">'/public'</span>
+]));</code></pre>
+              </div>
+            </article>
+
+            <!-- Idempotence Middleware -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>idempotence-middleware</h3>
+                  <div class="tags">
+                    <span class="tag">Logic</span>
+                    <span class="tag">Middleware</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Ensure that duplicate requests with the same idempotency key are processed only once.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/idempotence-middleware" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/idempotency-middleware" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/idempotence-middleware?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/idempotency-middleware?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { idempotencyMiddleware } <span class="k">from</span> <span class="s">'idempotency-middleware'</span>;
+
+app.<span class="f">use</span>(
+  <span class="f">idempotencyMiddleware</span>({
+    ttl: <span class="n">5000</span>
+  })
+);</code></pre>
+              </div>
+            </article>
+
+            <!-- On HTTP End -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>on-http-end</h3>
+                  <div class="tags">
+                    <span class="tag">Hooks</span>
+                    <span class="tag">HTTP</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Capture HTTP response content and headers when the request ends. Useful for logging and auditing.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/on-http-end" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/on-http-end" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/on-http-end?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/on-http-end?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> onEnd = <span class="f">require</span>(<span class="s">'on-http-end'</span>);
+
+<span class="f">onEnd</span>(res, (payload) => {
+  console.<span class="f">log</span>(<span class="s">'Response sent:'</span>, payload);
+});</code></pre>
+              </div>
+            </article>
+
+            <!-- Fetch Proxy -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>fetch-proxy</h3>
+                  <div class="tags">
+                    <span class="tag">Bun</span>
+                    <span class="tag">Proxy</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                A modern, fetch-based HTTP proxy library optimized for Bun runtime with advanced features.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/fetch-proxy" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/fetch-gate" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/fetch-proxy?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/fetch-gate?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> createFetchGate <span class="k">from</span> <span class="s">"fetch-gate"</span>;
+
+<span class="k">const</span> { proxy } = <span class="f">createFetchGate</span>({
+  base: <span class="s">"https://api.example.com"</span>
+});</code></pre>
+              </div>
+            </article>
+
+            <!-- Consistent Hash -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>consistent-hash</h3>
+                  <div class="tags">
+                    <span class="tag">Algo</span>
+                    <span class="tag">Hash</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Reliable consistent hashing implementation for distributed systems and load balancing.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/consistent-hash" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/fast-hashring" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/consistent-hash?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/fast-hashring?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> ConsistentHash = <span class="f">require</span>(<span class="s">'fast-hashring'</span>);
+<span class="k">const</span> hr = <span class="k">new</span> <span class="f">ConsistentHash</span>();
+
+hr.<span class="f">add</span>(<span class="s">'node1'</span>);
+hr.<span class="f">add</span>(<span class="s">'node2'</span>);
+
+<span class="k">const</span> node = hr.<span class="f">get</span>(<span class="s">'resource-key'</span>);</code></pre>
+              </div>
+            </article>
+
+            <!-- Restana Swagger Validator -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>swagger-validator</h3>
+                  <div class="tags">
+                    <span class="tag">OpenAPI</span>
+                    <span class="tag">Validation</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Middleware to validate requests against Swagger/OpenAPI definitions. Ensure API compliance.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/restana-swagger-validator" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/restana-swagger-validator" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/restana-swagger-validator?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/restana-swagger-validator?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>JavaScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">const</span> Validator = <span class="f">require</span>(<span class="s">'restana-swagger-validator'</span>);
+<span class="k">const</span> validator = <span class="k">new</span> <span class="f">Validator</span>(spec);
+
+service.<span class="f">use</span>(validator.<span class="f">validate</span>());</code></pre>
+              </div>
+            </article>
+
+            <!-- K-Number Utils -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>k-number-utils</h3>
+                  <div class="tags">
+                    <span class="tag">Math</span>
+                    <span class="tag">BigInt</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                TypeScript utility library for advanced mathematical operations and BigInt conversions.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/k-number-utils" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/k-number-utils" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/k-number-utils?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/k-number-utils?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { stringToBigInt } <span class="k">from</span> <span class="s">"k-number-utils"</span>;
+
+<span class="k">const</span> id = <span class="f">stringToBigInt</span>(<span class="s">"user@example.com"</span>).<span class="f">toUint32</span>();</code></pre>
+              </div>
+            </article>
+          </div>
+
+          <div class="projects-cta">
+            <a
+              href="https://github.com/BackendStack21"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Explore the Organization in Github</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Carousel Section -->
+      <div class="container" style="margin-bottom: 4rem">
+        <section class="blog-carousel">
+          <div class="section-header">
+            <h2 class="section-title" style="margin-bottom: 1rem">Latest from the Blog</h2>
+            <p class="section-subtitle">Insights and updates from the 21no.de team</p>
+          </div>
+
+          <div class="carousel-wrapper">
+            <button class="carousel-btn carousel-prev" aria-label="Previous">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <!-- Skeleton cards (shown while loading) -->
+            <div class="carousel-container">
+              <div id="carouselSkeleton" class="carousel-track">
+                <article class="blog-card skeleton">
+                  <div class="skeleton-image"></div>
+                  <div class="skeleton-content">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                    <div class="skeleton-line"></div>
+                  </div>
+                </article>
+                <article class="blog-card skeleton">
+                  <div class="skeleton-image"></div>
+                  <div class="skeleton-content">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                    <div class="skeleton-line"></div>
+                  </div>
+                </article>
+                <article class="blog-card skeleton">
+                  <div class="skeleton-image"></div>
+                  <div class="skeleton-content">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                    <div class="skeleton-line"></div>
+                  </div>
+                </article>
+              </div>
+              <!-- Actual blog cards (populated by JS) -->
+              <div id="carouselItems" class="carousel-track" style="display: none"></div>
+            </div>
+            <button class="carousel-btn carousel-next" aria-label="Next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+          <div id="carouselDots" class="carousel-dots"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="logo-v2.png" alt="21no.de" width="24" height="24" />
+            <span>21no.de</span>
+          </div>
+          <div class="footer-links">
+            <span>© 2022 - 2025</span>
+            <a href="mailto:contact@21no.de">Contact</a>
+            <a href="https://github.com/BackendStack21">GitHub</a>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
 
-    <footer class="footer">21no.de © 2022 - 2025 | <a href="mailto:contact@21no.de">Contact Us</a></footer>
-
-    <!-- 
-    <script type="text/javascript" src="https://cdn.cookie-script.com/s/28dc51cd1b79414f499d222fffd2095d.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLVYSDM624"></script>
-    <script>
-      window.addEventListener("CookieScriptCategory-targeting", function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-FLVYSDM624");
-      });
-    </script> 
-    -->
+    <script src="script.js"></script>
   </body>
 </html>
