@@ -285,7 +285,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const dynamicGap = gap;
       const totalSlidesDynamic = Math.ceil(cards.length / cardsPerView);
       const offsetPx = currentSlide * cardsPerView * (dynamicCardWidth + dynamicGap);
-      carousel.style.transform = `translateX(-${offsetPx}px)`;
+      // On mobile (single card view), scroll the container; on desktop use transform
+      if (window.innerWidth <= 768) {
+        const cardScrollPosition = currentSlide * dynamicCardWidth;
+        try {
+          carouselContainer.scrollTo({ left: cardScrollPosition, behavior: "smooth" });
+        } catch (e) {
+          carouselContainer.scrollLeft = cardScrollPosition;
+        }
+        carousel.style.transform = "";
+      } else {
+        carousel.style.transform = `translateX(-${offsetPx}px)`;
+      }
 
       // Update dots
       document.querySelectorAll(".carousel-dot").forEach((dot, index) => {
@@ -317,17 +328,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     prevBtn.addEventListener("click", () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-      }
+      currentSlide = Math.max(0, currentSlide - 1);
+      updateCarousel();
     });
 
     nextBtn.addEventListener("click", () => {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateCarousel();
-      }
+      currentSlide = currentSlide + 1;
+      updateCarousel();
     });
 
     // Handle window resize
@@ -339,6 +346,25 @@ document.addEventListener("DOMContentLoaded", () => {
         initializeCarousel();
       }, 250);
     });
+
+    // Sync current slide when user scrolls the container (mobile touch scrolling)
+    if (window.innerWidth <= 768) {
+      let scrollTimeout;
+      carouselContainer.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const dynamicCardWidth = cards[0] && cards[0].offsetWidth ? cards[0].offsetWidth : cardWidth;
+          const scrolled = Math.round(carouselContainer.scrollLeft / dynamicCardWidth);
+          if (scrolled !== currentSlide && scrolled < cards.length) {
+            currentSlide = scrolled;
+            // Update dots only, don't trigger updateCarousel to avoid loop
+            document.querySelectorAll(".carousel-dot").forEach((dot, index) => {
+              dot.classList.toggle("active", index === currentSlide);
+            });
+          }
+        }, 150);
+      });
+    }
 
     updateCarousel();
     console.log(`Carousel initialized. cards=${cards.length}`, { cardsPerView, totalSlides });

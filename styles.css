@@ -296,6 +296,13 @@ ul {
   gap: 16px;
 }
 
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    position: relative;
+    display: block;
+  }
+}
+
 .carousel-container {
   flex: 1;
   overflow: hidden;
@@ -752,17 +759,45 @@ ul {
   }
 
   .carousel-btn {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    box-shadow: var(--shadow-lg);
+    z-index: 20;
+  }
+
+  .carousel-prev {
+    left: 8px;
+  }
+
+  .carousel-next {
+    right: 8px;
   }
 
   .carousel-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
   }
 
   .carousel-track {
-    scroll-snap-align: start;
+    display: flex;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .carousel-track .blog-card {
+    flex: 0 0 calc(100% - 32px);
+    scroll-snap-align: center;
   }
 
   .blog-carousel {
@@ -778,5 +813,10 @@ ul {
   .footer-links {
     flex-direction: column;
     gap: 12px;
+  }
+  .carousel-dot {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 4px;
   }
 }

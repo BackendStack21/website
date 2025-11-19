@@ -210,16 +210,29 @@
                   <span>TypeScript</span>
                   <button class="copy-btn" aria-label="Copy code">Copy</button>
                 </div>
-                <pre><code><span class="k">import</span> { Gateway } <span class="k">from</span> <span class="s">'bungate'</span>;
+                <pre><code><span class="k">import</span> { BunGateway } <span class="k">from</span> <span class="s">'bungate'</span>;
 
-<span class="k">const</span> gateway = <span class="k">new</span> <span class="f">Gateway</span>({
-  routes: [{
-    prefix: <span class="s">'/api'</span>,
-    target: <span class="s">'http://localhost:3000'</span>
-  }]
+<span class="k">const</span> gateway = <span class="k">new</span> <span class="f">BunGateway</span>({
+  server: { port: <span class="n">3000</span> },
+  metrics: { enabled: <span class="k">true</span> },
 });
 
-gateway.<span class="f">start</span>(<span class="n">8080</span>);</code></pre>
+gateway.<span class="f">addRoute</span>({
+  pattern: <span class="s">'/api/*'</span>,
+  loadBalancer: {
+    strategy: <span class="s">'least-connections'</span>,
+    targets: [
+      { url: <span class="s">'http://api1.example.com'</span> },
+      { url: <span class="s">'http://api2.example.com'</span> },
+      { url: <span class="s">'http://api3.example.com'</span> },
+    ],
+    healthCheck: { enabled: <span class="k">true</span>, interval: <span class="n">30000</span>, path: <span class="s">'/health'</span> },
+  },
+});
+
+<span class="k">await</span> gateway.<span class="f">listen</span>();
+<span class="k">console</span>.<span class="f">log</span>(<span class="s">'🚀 Bungate running on http://localhost:3000'</span>);
+</code></pre>
               </div>
             </article>
 
