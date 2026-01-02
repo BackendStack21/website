@@ -141,6 +141,109 @@
           </div>
 
           <div class="projects-grid">
+            <!-- kMOSAIC -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>kMOSAIC</h3>
+                  <div class="tags">
+                    <span class="tag">Cryptography</span>
+                    <span class="tag">Post-Quantum</span>
+                    <span class="tag">Go</span>
+                    <span class="tag">Node</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Post-quantum cryptography library (kMOSAIC) implementing Multi-Oracle Structured Algebraic
+                Intractability Composition. Features a high-performance Go implementation and a separate Node.js/Bun
+                implementation, each with comprehensive white paper, detailed documentation, and a CLI tool. Combines
+                Sparse Lattice Subset Sum, Tensor Decomposition, and Expander Graph Random Walk for experimental
+                post-quantum security. Includes performance benchmarks for MOS-128 and MOS-256 security levels,
+                developer guides, and is available under MIT license.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/k-mosaic-go" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub (Go)</a
+                >
+                <a href="https://github.com/BackendStack21/k-mosaic" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub (Node)</a
+                >
+                <a href="https://k-mosaic.21no.de" target="_blank" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 12a8 8 0 0 1 8-8c.5 0 1 .04 1.49.12a5.98 5.98 0 0 0-5.37 5.37A8 8 0 0 1 12 4m0 16a8 8 0 0 1-8-8c0-.5.04-1 .12-1.49a5.98 5.98 0 0 0 5.37 5.37A8 8 0 0 1 12 20"
+                    /></svg
+                  >Website</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/k-mosaic?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/dm/k-mosaic?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="NPM Downloads"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>TypeScript</span>
+                  <button class="copy-btn" aria-label="Copy code">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { <span class="f">kemGenerateKeyPair</span>, <span class="f">encapsulate</span>, <span class="f">decapsulate</span>, MOS_128 } <span class="k">from</span> <span class="s">'k-mosaic'</span>
+
+<span class="c">// Generate key pair (MOS-128 or MOS-256)</span>
+<span class="k">const</span> { publicKey, secretKey } = <span class="k">await</span> <span class="f">kemGenerateKeyPair</span>(MOS_128)
+
+<span class="c">// Encapsulate a shared secret</span>
+<span class="k">const</span> { ciphertext, sharedSecret } = <span class="k">await</span> <span class="f">encapsulate</span>(publicKey)
+
+<span class="c">// Decapsulate to recover the shared secret</span>
+<span class="k">const</span> recovered = <span class="k">await</span> <span class="f">decapsulate</span>(ciphertext, secretKey, publicKey)
+<span class="c">// sharedSecret === recovered</span></code></pre>
+              </div>
+            </article>
+
             <!-- Bungate -->
             <article class="project-card">
               <div class="card-header">
@@ -248,8 +351,11 @@ gateway.<span class="f">addRoute</span>({
                 </div>
               </div>
               <p class="project-desc">
-                Lightweight and fast Node.js framework for building RESTful APIs. Express-like syntax with superior
-                performance.
+                Lightweight and fast Node.js framework for building RESTful APIs with Express-like syntax and superior
+                performance. Includes built-in support for middleware, routing, request/response handling, and error
+                management. Features comprehensive documentation, extensive examples, and active community support.
+                Designed for microservices, serverless functions, and high-throughput applications requiring minimal
+                overhead and maximum reliability.
               </p>
               <div class="project-links">
                 <a href="https://github.com/BackendStack21/restana" class="link-item"
@@ -1611,81 +1717,6 @@ hr.<span class="f">add</span>(<span class="s">'node1'</span>);
 hr.<span class="f">add</span>(<span class="s">'node2'</span>);
 
 <span class="k">const</span> node = hr.<span class="f">get</span>(<span class="s">'resource-key'</span>);</code></pre>
-              </div>
-            </article>
-
-            <!-- Restana Swagger Validator -->
-            <article class="project-card">
-              <div class="card-header">
-                <div class="project-meta">
-                  <h3>swagger-validator</h3>
-                  <div class="tags">
-                    <span class="tag">OpenAPI</span>
-                    <span class="tag">Validation</span>
-                  </div>
-                </div>
-              </div>
-              <p class="project-desc">
-                Middleware to validate requests against Swagger/OpenAPI definitions. Ensure API compliance.
-              </p>
-              <div class="project-links">
-                <a href="https://github.com/BackendStack21/restana-swagger-validator" class="link-item"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    ></path></svg
-                  >GitHub</a
-                >
-                <a href="https://www.npmjs.com/package/restana-swagger-validator" class="link-item"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                    <path
-                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                    ></path>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
-                  >npm</a
-                >
-              </div>
-              <div class="badges">
-                <img
-                  src="https://img.shields.io/github/stars/BackendStack21/restana-swagger-validator?style=flat-square&labelColor=1e293b&color=38bdf8"
-                  alt="GitHub Stars"
-                />
-                <img
-                  src="https://img.shields.io/npm/dm/restana-swagger-validator?style=flat-square&labelColor=1e293b&color=38bdf8"
-                  alt="NPM Downloads"
-                />
-              </div>
-              <div class="code-preview">
-                <div class="code-header">
-                  <span>JavaScript</span>
-                  <button class="copy-btn" aria-label="Copy code">Copy</button>
-                </div>
-                <pre><code><span class="k">const</span> Validator = <span class="f">require</span>(<span class="s">'restana-swagger-validator'</span>);
-<span class="k">const</span> validator = <span class="k">new</span> <span class="f">Validator</span>(spec);
-
-service.<span class="f">use</span>(validator.<span class="f">validate</span>());</code></pre>
               </div>
             </article>
 
