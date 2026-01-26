@@ -533,6 +533,14 @@ ul {
   font-size: 18px;
 }
 
+.section-note {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 12px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -637,8 +645,18 @@ ul {
 
 .projects-cta {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 40px;
+  gap: 16px;
+}
+
+.cta-note {
+  color: var(--text-muted);
+  font-size: 15px;
+  text-align: center;
+  max-width: 500px;
 }
 
 /* Code Preview */
