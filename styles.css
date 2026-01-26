@@ -207,12 +207,12 @@ ul {
 
 /* Hero Section */
 .hero {
-  padding: 160px 0 100px;
+  padding: 120px 0 60px;
   text-align: center;
 }
 
 .badge-wrapper {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   animation: fadeDown 0.8s ease-out;
 }
 
@@ -231,7 +231,7 @@ ul {
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
   animation: fadeUp 0.8s ease-out 0.1s backwards;
 }
@@ -247,7 +247,7 @@ ul {
   font-size: clamp(16px, 2vw, 20px);
   color: var(--text-muted);
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 24px;
   animation: fadeUp 0.8s ease-out 0.2s backwards;
 }
 
@@ -263,7 +263,7 @@ ul {
   gap: 16px;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 24px;
   flex-wrap: wrap;
   animation: fadeUp 0.8s ease-out 0.4s backwards;
 }
@@ -283,7 +283,7 @@ ul {
 
 /* Blog Carousel */
 .blog-carousel {
-  padding: 80px 0;
+  padding: 50px 0;
   background: rgba(15, 23, 42, 0.3);
   border-bottom: 1px solid var(--border);
 }
@@ -420,7 +420,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .carousel-dot {
@@ -474,7 +474,7 @@ ul {
 
 /* Features Section */
 .features {
-  padding: 80px 0;
+  padding: 50px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: rgba(15, 23, 42, 0.5);
@@ -483,7 +483,7 @@ ul {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 24px;
 }
 
 .feature-card {
@@ -514,12 +514,12 @@ ul {
 
 /* Projects Section */
 .projects {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-header h2 {
@@ -638,7 +638,7 @@ ul {
 .projects-cta {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* Code Preview */
@@ -695,7 +695,7 @@ ul {
 
 /* Footer */
 .footer {
-  padding: 60px 0;
+  padding: 40px 0;
   border-top: 1px solid var(--border);
   background: var(--bg-dark);
 }

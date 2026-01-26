@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -141,6 +141,110 @@
           </div>
 
           <div class="projects-grid">
+            <!-- fast-injection -->
+            <article class="project-card">
+              <div class="card-header">
+                <div class="project-meta">
+                  <h3>fast-injection</h3>
+                  <div class="tags">
+                    <span class="tag">Dependency Injection</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Bun</span>
+                  </div>
+                </div>
+              </div>
+              <p class="project-desc">
+                Modern TypeScript dependency injection container optimized for Bun runtime. Blazing fast with
+                sub-microsecond resolution (~26M ops/sec for cached singletons), lightweight (&lt;5KB), and fully
+                type-safe. Supports singleton, transient, and scoped lifetimes with flexible API options: decorators,
+                functional, or imperative. Built-in security against prototype pollution, memory leaks, and DoS attacks.
+                Includes testing utilities for easy mocking and test isolation.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/BackendStack21/fast-injection" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path></svg
+                  >GitHub</a
+                >
+                <a href="https://www.npmjs.com/package/fast-injection" target="_blank" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    ></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line></svg
+                  >npm</a
+                >
+                <a href="https://fast-injection.21no.de" target="_blank" class="link-item"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path></svg
+                  >Website</a
+                >
+              </div>
+              <div class="badges">
+                <img
+                  src="https://img.shields.io/github/stars/BackendStack21/fast-injection?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="GitHub Stars"
+                />
+                <img
+                  src="https://img.shields.io/npm/v/fast-injection?style=flat-square&labelColor=1e293b&color=38bdf8"
+                  alt="npm version"
+                />
+              </div>
+              <div class="code-preview">
+                <div class="code-header">
+                  <span>Quick Start</span>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code><span class="k">import</span> { Container } <span class="k">from</span> <span class="s">'fast-injection'</span>;
+<span class="k">import</span> { singleton, inject } <span class="k">from</span> <span class="s">'fast-injection/decorators'</span>;
+
+<span class="k">@singleton</span>()
+<span class="k">class</span> <span class="f">UserService</span> {
+  <span class="f">getUser</span>(id) { <span class="k">return</span> { id, name: <span class="s">'John'</span> }; }
+}
+
+<span class="k">const</span> container = <span class="k">new</span> <span class="f">Container</span>();
+container.<span class="f">register</span>(UserService);</code></pre>
+              </div>
+            </article>
+
             <!-- kMOSAIC -->
             <article class="project-card">
               <div class="card-header">
